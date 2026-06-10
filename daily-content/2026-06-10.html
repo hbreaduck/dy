@@ -7,148 +7,48 @@
   <style>
     body { font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; background: #fffef7; color: #333; line-height: 1.8; }
     h1 { color: #2c7a4b; border-bottom: 3px solid #2c7a4b; padding-bottom: 10px; font-size: 1.8em; }
-    h2 { color: #e67e22; margin-top: 36px; font-size: 1.4em; }
+    h2 { color: #e67e22; margin-top: 40px; font-size: 1.4em; }
+    h3 { color: #5d6d7e; font-size: 1.1em; margin-top: 20px; margin-bottom: 4px; }
     p { margin: 12px 0; }
-
-    /* 스케줄 */
-    .schedule-section { background: #fff8e1; border: 2px solid #f9c74f; border-radius: 12px; padding: 20px 24px; margin: 24px 0; }
-    .schedule-section h2 { color: #d4800a; margin-top: 0; }
-    .schedule-table { width: 100%; border-collapse: collapse; margin: 12px 0; }
-    .schedule-table th { background: #f9c74f; color: #5a3e00; padding: 8px 12px; text-align: center; font-size: 1em; }
-    .schedule-table td { padding: 8px 14px; border-bottom: 1px solid #f0e0b0; text-align: center; }
-    .schedule-table tr:last-child td { border-bottom: none; }
-    .today-row td { background: #fff3cd; font-weight: bold; color: #b34700; font-size: 1.05em; }
-    .alert-box { background: #fff3e0; border-left: 5px solid #ff9800; border-radius: 6px; padding: 12px 18px; margin-top: 14px; font-size: 1em; color: #7a4000; }
-
-    /* 귀여운 동물 그림 */
-    .cute-animal-wrap { text-align: center; margin: 6px 0 18px; }
-
-    /* 수학 */
     .quiz-box { background: #eaf6ff; border-left: 5px solid #3498db; padding: 16px 20px; border-radius: 6px; margin-top: 12px; }
     .quiz-box strong { color: #2980b9; }
-    .math-expr { font-size: 1.3em; font-weight: bold; color: #1a5276; margin: 10px 0; letter-spacing: 2px; }
     .answer { background: #eaffea; border-left: 5px solid #2ecc71; padding: 12px 20px; border-radius: 6px; margin-top: 8px; }
-    .answer ol { margin: 6px 0 0 0; padding-left: 20px; }
+    .answer ol { margin: 8px 0 0 0; padding-left: 22px; }
     .answer li { margin: 4px 0; }
-
     footer { margin-top: 50px; font-size: 0.85em; color: #999; text-align: center; border-top: 1px solid #ddd; padding-top: 16px; }
     @media print { body { background: white; } }
   </style>
 </head>
 <body>
 
-  <h1>오늘의 흥미로운 이야기 📚<br><small style="font-size:0.6em; color:#666;">2026년 06월 10일 · 수요일</small></h1>
-
-  <!-- ===== 스케줄 ===== -->
-  <div class="schedule-section">
-    <h2>📅 이번 주 학원 스케줄</h2>
-
-    <!-- 귀여운 고양이 SVG -->
-    <div class="cute-animal-wrap">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="110" height="110" aria-label="귀여운 고양이">
-        <!-- 몸통 -->
-        <ellipse cx="60" cy="85" rx="28" ry="24" fill="#f5c842"/>
-        <!-- 머리 -->
-        <circle cx="60" cy="52" r="26" fill="#f5c842"/>
-        <!-- 왼쪽 귀 -->
-        <polygon points="36,32 26,8 50,22" fill="#f5c842"/>
-        <!-- 오른쪽 귀 -->
-        <polygon points="84,32 94,8 70,22" fill="#f5c842"/>
-        <!-- 왼쪽 귀 안쪽 -->
-        <polygon points="38,30 30,13 48,22" fill="#f9aacc"/>
-        <!-- 오른쪽 귀 안쪽 -->
-        <polygon points="82,30 90,13 72,22" fill="#f9aacc"/>
-        <!-- 눈 (왼) -->
-        <ellipse cx="51" cy="48" rx="5" ry="5.5" fill="#3a2a00"/>
-        <!-- 눈 (오) -->
-        <ellipse cx="69" cy="48" rx="5" ry="5.5" fill="#3a2a00"/>
-        <!-- 눈 반짝임 -->
-        <circle cx="53" cy="46" r="2" fill="white"/>
-        <circle cx="71" cy="46" r="2" fill="white"/>
-        <!-- 코 -->
-        <ellipse cx="60" cy="57" rx="4" ry="2.5" fill="#e07090"/>
-        <!-- 입 -->
-        <path d="M56,60 Q60,65 64,60" stroke="#b05070" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-        <!-- 수염 왼쪽 -->
-        <line x1="22" y1="56" x2="54" y2="58" stroke="#aaa" stroke-width="1.2"/>
-        <line x1="22" y1="61" x2="54" y2="60" stroke="#aaa" stroke-width="1.2"/>
-        <!-- 수염 오른쪽 -->
-        <line x1="98" y1="56" x2="66" y2="58" stroke="#aaa" stroke-width="1.2"/>
-        <line x1="98" y1="61" x2="66" y2="60" stroke="#aaa" stroke-width="1.2"/>
-        <!-- 꼬리 -->
-        <path d="M88,90 Q110,75 105,60 Q100,50 92,58" stroke="#e8b800" stroke-width="6" fill="none" stroke-linecap="round"/>
-        <!-- 앞발 -->
-        <ellipse cx="46" cy="106" rx="10" ry="7" fill="#f5c842"/>
-        <ellipse cx="74" cy="106" rx="10" ry="7" fill="#f5c842"/>
-      </svg>
-    </div>
-
-    <table class="schedule-table">
-      <thead>
-        <tr>
-          <th>요일</th>
-          <th>학원</th>
-          <th>시간</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>월요일</td>
-          <td>독서토론</td>
-          <td>오후 4:00</td>
-        </tr>
-        <tr>
-          <td>화요일</td>
-          <td>피아노</td>
-          <td>오후 4:00</td>
-        </tr>
-        <tr class="today-row">
-          <td>🌟 수요일 (오늘!)</td>
-          <td>독서토론</td>
-          <td>오후 4:00</td>
-        </tr>
-        <tr>
-          <td>목요일</td>
-          <td>미술</td>
-          <td>오후 3:30</td>
-        </tr>
-        <tr>
-          <td>금요일</td>
-          <td>미술 → 피아노</td>
-          <td>오후 4:00 / 5:30</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="alert-box">
-      ⏰ <strong>오늘은 독서토론 오후 4시!</strong> 시간을 꼭 지켜요.<br>
-      시간 약속을 잘 지키는 사람이 가장 믿음직한 사람이 된답니다. 파이팅! 💪
-    </div>
-  </div>
+  <h1>오늘의 흥미로운 이야기 📚<br><small style="font-size:0.6em; color:#666;">2026년 06월 10일</small></h1>
 
   <!-- ===== 동물 이야기 ===== -->
   <h2>🐾 동물 이야기</h2>
-  <p>문어(octopus)는 지구에서 가장 영리한 무척추동물(뼈가 없는 동물)이에요. 문어의 뇌에는 무려 <strong>5억 개</strong>의 신경세포가 있는데, 그 중 무려 3분의 2가 뇌가 아닌 <strong>팔 속</strong>에 들어 있어요! 팔 하나하나가 스스로 생각하고 움직일 수 있는 셈이죠. 덕분에 뚜껑이 닫힌 유리병을 혼자 열고, 미로를 탈출하고, 다른 문어가 문제 푸는 걸 <strong>보기만</strong> 해도 방법을 배울 수 있답니다.</p>
-  <p>2026년 6월, 다트머스 대학교 연구팀이 발표한 연구에 따르면 문어가 <strong>거울을 이용해</strong> 자기 뒤편에 숨겨진 먹이를 찾을 수 있다는 것이 처음으로 밝혀졌어요. 거울을 활용하는 능력은 지금까지 포유류나 새처럼 척추가 있는 동물에서만 확인됐었는데, 문어도 그 능력이 있다니 정말 놀랍죠? 거울 앞에 선 문어를 한번 상상해 보세요!</p>
+  <h3>수학 천재 물고기, 흰점복어!</h3>
+  <p>바닷속에 수학을 잘하는 물고기가 있다는 사실, 알고 있었나요? 바로 <strong>흰점복어</strong>(몸에 흰 점이 있는 복어)입니다. 수컷 흰점복어는 암컷의 마음을 사로잡기 위해 모래 위에 지름(원의 양쪽 끝 길이) 2미터가 넘는 완벽한 원 모양 무늬를 만듭니다. 지느러미로 모래를 쓸어가며 며칠씩 작업하는데, 물의 흐름과 모래 알갱이 무게까지 계산한다고 해요! 만약 원이 조금이라도 삐뚤어지면 암컷이 그냥 지나쳐버린다니, 흰점복어는 진짜 &lsquo;수학 천재&rsquo;라고 불러도 될 것 같죠?</p>
+  <p>최근 과학자들이 태평양(지구에서 가장 큰 바다) 심해(아주 깊은 바닷속)에서 새로운 갑각류(게나 새우처럼 딱딱한 껍질을 가진 동물) 무려 24종을 한꺼번에 발견했습니다! 지구에는 아직 우리가 모르는 신기한 생물이 정말 많이 남아 있답니다. 혹시 여러분도 나중에 새로운 생물을 발견하는 과학자가 될 수 있을지도 몰라요! 🔬</p>
 
   <!-- ===== 새 이야기 ===== -->
   <h2>🐦 새 이야기</h2>
-  <p>앵무새(parrot)는 새 중에서 가장 &lsquo;수다쟁이&rsquo;로 유명하죠. 그런데 앵무새가 사람 말을 흉내 낼 수 있는 이유가 뭔지 알아요? 앵무새의 <strong>혀 모양이 사람의 혀와 매우 비슷</strong>하기 때문이에요! 대부분의 새는 혀가 딱딱하고 가늘지만, 앵무새는 혀가 두껍고 유연해서 복잡한 소리를 만들어 낼 수 있답니다.</p>
-  <p>앵무새의 지능은 <strong>5살 어린이</strong> 수준과 비슷하다고 해요. 단순히 소리를 따라 하는 게 아니라, 색깔&middot;숫자&middot;모양을 구별하고 간단한 질문에 답할 수도 있어요. 특히 아프리카 회색 앵무 &lsquo;알렉스&rsquo;는 100개 이상의 단어를 정확히 사용하고, &ldquo;나 지금 가고 싶어&rdquo;처럼 자신의 감정을 표현하기도 했답니다. 새 한 마리가 말을 한다니, 신기하지 않나요?</p>
+  <h3>까마귀의 장례식과 200일 동안 나는 새!</h3>
+  <p>까마귀는 놀랍도록 영리한 새입니다. 무리 중 한 마리가 죽으면, 다른 까마귀들이 주변에 모여 크게 울어댑니다. 사람의 장례식(세상을 떠난 사람을 배웅하는 의식)처럼 보이죠? 과학자들이 연구해보니, 까마귀들은 슬퍼서가 아니라 &ldquo;저 친구는 왜 죽었을까? 나도 위험한 건 아닐까?&rdquo; 하는 정보를 모으기 위해 모인다고 해요. 생존을 위해 함께 배우는 아주 영리한 행동입니다!</p>
+  <p>또 정말 신기한 새도 있어요. <strong>알프스칼새</strong>는 무려 200일 동안 땅에 한 번도 내려앉지 않고 계속 날아다닙니다. 날면서 잠을 자거든요! 뇌(생각하는 기관)의 반쪽씩 번갈아 재우는 방법으로 날면서도 쉰다고 해요. 딱따구리도 놀랍습니다. 딱따구리의 혀는 너무 길어서 두개골(머리뼈)을 빙 감고 있는데, 나무를 쪼을 때 뇌를 보호하는 쿠션 역할까지 한답니다!</p>
 
-  <!-- ===== 수학 문제 ===== -->
-  <h2>🔢 수학 문제 (5학년 과정)</h2>
+  <!-- ===== 수학 수수께끼 ===== -->
+  <h2>🔢 수학 수수께끼</h2>
   <div class="quiz-box">
-    <strong>오늘의 문제 — 분수의 덧셈:</strong>
-    <div class="math-expr">2/3 + 3/4 = ?</div>
-    <strong>힌트:</strong> 분모 3과 4의 <strong>최소공배수</strong>(두 수의 공통 배수 중 가장 작은 수)를 구해서 <strong>통분</strong>(분모를 같게 만드는 것)해 보세요.
+    <strong>오늘의 문제:</strong> 농부 할아버지네 농장에 닭과 토끼가 합쳐서 20마리 있습니다. 머리 수를 세어보니 20개, 다리 수를 세어보니 56개였습니다. 닭과 토끼는 각각 몇 마리일까요?<br><br>
+    <strong>힌트:</strong> 닭은 다리가 2개, 토끼는 다리가 4개입니다. 20마리가 전부 닭이라면 다리는 몇 개일까요? 실제 다리 수(56개)와 비교해보세요!
   </div>
   <div class="answer">
-    <strong>정답: 1과 5/12</strong>
+    <strong>정답: 닭 12마리, 토끼 8마리</strong>
     <ol>
-      <li>3과 4의 최소공배수 = <strong>12</strong></li>
-      <li>2/3 = 8/12 &nbsp;,&nbsp; 3/4 = 9/12</li>
-      <li>8/12 + 9/12 = <strong>17/12 = 1과 5/12</strong> ✓</li>
+      <li>20마리가 모두 닭이라고 가정하면 다리는 20 &times; 2 = <strong>40개</strong></li>
+      <li>실제 다리는 56개이므로 56 &minus; 40 = <strong>16개</strong>가 더 많음</li>
+      <li>토끼는 닭보다 다리가 2개 더 많으니, 토끼 수는 16 &divide; 2 = <strong>8마리</strong></li>
+      <li>따라서 닭은 20 &minus; 8 = <strong>12마리</strong></li>
+      <li>확인: 12 &times; 2 + 8 &times; 4 = 24 + 32 = <strong>56</strong> ✓</li>
     </ol>
   </div>
 
